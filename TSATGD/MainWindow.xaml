@@ -1,0 +1,34 @@
+﻿<mah:MetroWindow x:Class="TSATGD.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                 xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 Width="800"
+                 Height="500"
+                 GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
+                 WindowStartupLocation="CenterScreen"
+                 mc:Ignorable="d" Icon="Assets/icon.png" Title="TSATGD ~ Manager">
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <Button Click="PlayersListButton">
+                <iconPacks:PackIconFontAwesome Width="22" Height="22" Kind="StreamSolid" />
+            </Button>
+            <Button Click="DaysListButton">
+                <iconPacks:PackIconFontAwesome Width="22" Height="22" Kind="CalendarSolid" />
+            </Button>
+            <Button Click="TeamsListButton">
+                <iconPacks:PackIconFontAwesome Width="22" Height="22" Kind="UsersSolid" />
+            </Button>
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
+    <mah:MetroWindow.LeftWindowCommands>
+        <mah:WindowCommands>
+            <Button Click="CreditsButton">
+                <iconPacks:PackIconMaterial Width="22" Height="22" Kind="Cat"/>
+            </Button>
+        </mah:WindowCommands>
+    </mah:MetroWindow.LeftWindowCommands>
+    <Page Margin="0,0,0,0" />
+</mah:MetroWindow>

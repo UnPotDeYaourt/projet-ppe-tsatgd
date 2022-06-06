@@ -1,0 +1,168 @@
+﻿<Page x:Class="TSATGD.Pages.PlayerProfile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TSATGD.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PlayerProfile">
+
+    <Grid Background="#F9F9F9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10px" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10px" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10px" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10px" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120px" />
+                <RowDefinition Height="1px" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50px" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20px" />
+                    <ColumnDefinition Width="200px" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="200px" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="230px" />
+                    <ColumnDefinition Width="20px" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="10px" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Image Source="../Assets/Rectangle 8.png" Stretch="Fill" Width="60" Height="60"/>
+                        <Label x:Name="lbl_initial" Content=""  HorizontalAlignment="Left" Height="60" Margin="6,30,0,0" VerticalAlignment="Top" Width="54" FontWeight="Bold" FontSize="36" Foreground="White"/>
+                        <Button x:Name="btn_licence_statut" Width="27" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="18,90.5,18,0">
+                            <Image Source="../Assets/fluent_receipt-money-20-filled.png" Stretch="Fill" Width="14" Height="15"/>
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30px" />
+                            <RowDefinition Height="18px" />
+                            <RowDefinition Height="42" />
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="10" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="1" x:Name="im_paye" Width="80px" HorizontalAlignment="Left"  Source="../Assets/Green pill.png" Stretch="Fill" Visibility="Hidden"/>
+                        <Image Grid.Row="1" x:Name="im_paspaye" Width="80px" HorizontalAlignment="Left"  Source="../Assets/Red pill.png" Stretch="Fill" Visibility="Hidden"/>
+                        <!--<Image Grid.Row="1" Width="80px" HorizontalAlignment="Left"  Source="../Assets/Red pill.png" Stretch="Fill"/>-->
+                        <Label x:Name="lbl_name" Grid.Row="2" Content="" HorizontalContentAlignment="Left" VerticalAlignment="Center"  FontWeight="Bold" FontSize="16" Padding="0,0,0,0" Height="42" Margin="0,0,0.5,0"/>
+                        <Label x:Name="lbl_senior" Grid.Row="3" Content="Senior +" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="12" Foreground="#7A787B" Padding="0,0,0,0" Margin="0,0,0.5,0" HorizontalAlignment="Left"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30px"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5px"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30px"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30px" />
+                        <ColumnDefinition Width="8px" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Row="1" Grid.Column="0" Source="../Assets/fxemoji_openmailboxraised.png" Stretch="Fill"  />
+                    <Label x:Name="lbl_mail" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Content="" FontWeight="Bold" FontSize="14" Padding="0,0,0,0"/>
+                    <Image Grid.Row="3" Grid.Column="0" Source="../Assets/fxemoji_birthdaycake.png" Stretch="Fill"/>
+                    <Label x:Name="lbl_birthdate" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Content="" FontWeight="Bold" FontSize="14" Padding="0,0,0,0"/>
+                </Grid>
+                <Grid Grid.Column="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="27*"/>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="197*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30px" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="5px" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="30px" />
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btn_license" Content="Afficher la licence" Foreground="White" BorderBrush="{x:Null}" Background="#FFFFCF00" Click="btn_license_Click" Margin="0.4,30,0.4,4.4" Grid.RowSpan="3" Grid.Column="2"/>
+                    <Button x:Name="btn_certificat" Grid.Row="2" Content="Afficher le certificat médical" Foreground="White" BorderBrush="{x:Null}" Background="#FFFFCF00" Click="btn_certificat_Click" Margin="0.4,4.4,0.4,30" Grid.RowSpan="3" Grid.Column="2"/>
+                    <Button x:Name="btn_license_add" Width="27" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,0.6,0.2,4.4" Grid.Row="1" Grid.RowSpan="2" Click="btn_license_add_Click">
+                        <Image Source="../Assets/akar-icons_cloud-upload.png" Stretch="Fill" Width="14" Height="14"/>
+                    </Button>
+                    <Button x:Name="btn_certificat_add" Width="27" Height="27" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="0,4.4,0.2,0.6" Grid.Row="2" Grid.RowSpan="2" Click="btn_certificat_add_Click">
+                        <Image Source="../Assets/akar-icons_cloud-upload.png" Stretch="Fill" Width="14" Height="14"/>
+                    </Button>
+                </Grid>
+            </Grid>
+            <Image Grid.Row="1" Source="../Assets/Line 3.png" Stretch="Fill" />
+            <Grid Grid.Row="2">
+                <DataGrid Grid.Column="1"  AutoGenerateColumns="False" Grid.Row="1" x:Name="dg_joueurs" IsReadOnly="True" FontSize="15" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Nom" Binding="{Binding NomJoueur}" Width="*">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="HorizontalAlignment" Value="Center" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Prénom" Binding="{Binding PrenomJoueur}" Width="*">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="HorizontalAlignment" Value="Center" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridCheckBoxColumn Header="Senior +" Binding="{Binding IsSeniorPlus}" Width="*">
+                            <DataGridCheckBoxColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                </Style>
+                            </DataGridCheckBoxColumn.HeaderStyle>
+                        </DataGridCheckBoxColumn>
+                        <DataGridTextColumn Header="Classement" Binding="{Binding ClassementJoueur}" Width="*">
+                            <DataGridTextColumn.HeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                </Style>
+                            </DataGridTextColumn.HeaderStyle>
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="HorizontalAlignment" Value="Center" />
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150px" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btn_back" Grid.Column="0" Content="Retour" Height="26"  Width="111" Foreground="White" BorderBrush="{x:Null}" Background="#FFFFCF00" Click="btn_back_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

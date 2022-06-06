@@ -1,0 +1,127 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TSATGD.Pages"
+      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="TSATGD.Pages.DaysList"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DaysList">
+
+    <Grid Background="#F9F9F9">
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40px" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="40px" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40px" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="40px" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="180px"/>
+                </Grid.ColumnDefinitions>
+                <ScrollViewer Grid.Column="0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                    <ItemsControl x:Name="ic_days" Grid.Column="0">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+
+                                <Grid Width="200px">
+                                    <!-- ================= -->
+                                    <Grid>
+                                        <Image Source="../Assets/Day.png" Stretch="Fill" />
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="15px" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="15px" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="10px" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="15px" />
+                                            </Grid.RowDefinitions>
+                                            <Grid Grid.Row="1" Grid.Column="1">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="120px" />
+                                                    <RowDefinition Height="*" />
+                                                    <RowDefinition Height="120px" />
+                                                </Grid.RowDefinitions>
+
+                                                <Grid Grid.Row="0">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="2*" />
+                                                        <RowDefinition Height="*" />
+                                                    </Grid.RowDefinitions>
+                                                    <TextBlock Grid.Row="1" HorizontalAlignment="Center" Padding="0px" Text="{Binding DateJournee, ConverterCulture=fr-FR, StringFormat=MMM}" FontWeight="Bold" FontSize="20" />
+                                                    <TextBlock Grid.Row="1" HorizontalAlignment="Center" Padding="0px" Margin="10px" Text="{Binding DateJournee, ConverterCulture=fr-FR, StringFormat=dd}" FontWeight="Bold" FontSize="60" Grid.RowSpan="3" />
+                                                    <TextBlock Grid.Row="3" HorizontalAlignment="Center" Padding="0px" Text="{Binding DateJournee, ConverterCulture=fr-FR, StringFormat=ddd}" FontWeight="Bold" FontSize="20" />
+                                                </Grid>
+                                                <Grid Grid.Row="1">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="*" />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid Grid.Row="1">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="20px" />
+                                                            <ColumnDefinition Width="*" />
+                                                            <ColumnDefinition Width="*" />
+                                                            <ColumnDefinition Width="*" />
+                                                            <ColumnDefinition Width="20px" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <Button Grid.Column="1" Tag="{Binding IdJournee}" x:Name="btn_show" Click="btn_show_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                                            <Image Source="../Assets/ci_tennis-match.png" />
+                                                        </Button>
+                                                        <Button Grid.Column="3" Tag="{Binding IdJournee}" x:Name="btn_available_player" Click="btn_available_player_Click" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                                                            <Image Source="../Assets/bx_bxs-user-check.png" />
+                                                        </Button>
+                                                    </Grid>
+                                                </Grid>
+                                                <Grid Grid.Row="2">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="5px" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="*" />
+                                                    </Grid.RowDefinitions>
+
+                                                    <TextBlock Grid.Row="0" Padding="0px" HorizontalAlignment="Center" Text="{Binding SeniorLabel}" FontWeight="Bold" FontSize="15" />
+                                                    <TextBlock Grid.Row="2" Padding="0px" HorizontalAlignment="Center" Text="{Binding DateJournee, ConverterCulture=fr-FR, StringFormat=HH:mm}" FontWeight="Bold" FontSize="24" />
+                                                </Grid>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                    <!-- ================= -->
+                                </Grid>
+
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+
+                <Grid Grid.Column="1">
+                    <Image Source="../Assets/Day.png" Stretch="Fill"/>
+                    <Button x:Name="btn_CreateDay" Width="65" Height="65" Click="btn_goto_CreateDay" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" mah:ControlsHelper.FocusBorderBrush="{x:Null}">
+                        <Image Source="../Assets/akar-icons_circle-plus.png" Stretch="Fill" Width="50" Height="50"/>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

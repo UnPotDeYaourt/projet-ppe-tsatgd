@@ -1,0 +1,12 @@
+obj/
+.vs/
+bin/
+*.baml
+*.cache
+*.testlog
+*.lref
+*.i.cache
+*.i.lref
+*.suo
+
+.DS_Store

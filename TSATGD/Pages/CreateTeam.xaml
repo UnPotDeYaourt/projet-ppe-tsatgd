@@ -1,0 +1,102 @@
+﻿<Page x:Class="TSATGD.Pages.CreateTeam"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TSATGD.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreateTeam">
+
+
+    <Grid Background="#7F000000">
+        <Image Margin="10,10,10,10" Source="../Assets/Rectangle 17.png" Stretch="Fill"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10px"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10px"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10px" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="10px" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70px" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="70px" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" HorizontalAlignment="Left" Margin="20, 0, 0, 0" Content="Création d'une équipe" Height="41" Width="285" FontWeight="Bold" FontSize="24"/>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="1px" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" Margin="20,0,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="65px" />
+                            <RowDefinition Height="65px" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="20px" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" HorizontalAlignment="Left" Content="Catégorie :" Height="25" Width="210" FontWeight="Bold" FontSize="10" Foreground="#FF545454"/>
+                            <ComboBox x:Name="cbx_categorie" Grid.Row="1" VerticalAlignment="Top" Margin="0,3,0,0" Height="30" BorderBrush="Black"/>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="20px" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Row="0" HorizontalAlignment="Left" Content="Nombre d'équipe :" Height="25" Width="210" FontWeight="Bold" FontSize="10" Foreground="#FF545454"/>
+                            <ComboBox x:Name="cbx_nom_equipe" Grid.Row="1" VerticalAlignment="Top" Margin="0,3,0,0" Height="30" BorderBrush="Black"/>
+                        </Grid>
+                    </Grid>
+                    <Image Grid.Column="1" Source="../Assets/Line 6.png" Stretch="Fill"/>
+                    <Grid Grid.Column="2" Margin="0,0,20,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="25px" />
+                            <RowDefinition Height="5px" />
+                            <RowDefinition Height="30px" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="30px" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="30px" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" VerticalContentAlignment="Center" HorizontalAlignment="Center" Content="Numéro" FontWeight="Bold" FontSize="10" Foreground="#FF545454"/>
+                        <Label Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center" Content="Division" FontWeight="Bold" FontSize="10" Foreground="#FF545454"/>
+                        <Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="15" Content="1."/>
+                        <TextBox x:Name="tbx_div_1" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="" BorderBrush="Gainsboro" />
+                        <Label Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="15" Content="2."/>
+                        <TextBox x:Name="tbx_div_2" Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" Text="" BorderBrush="Gainsboro" />
+                        <Label Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="15" Content="3."/>
+                        <TextBox x:Name="tbx_div_3" Grid.Row="6" Grid.Column="1" TextWrapping="Wrap" Text="" BorderBrush="Gainsboro" />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="175px" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="175px" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="btn_back" Grid.Column="0" Content="Retour" Height="26" Width="111" Foreground="White" BorderBrush="{x:Null}" Background="#FFFFCF00" Click="btn_back_Click"/>
+                    <Button x:Name="btn_save" Grid.Column="2" Content="Enregistrer" Height="26" Width="111" BorderBrush="{x:Null}" Background="#FFD2007B" Foreground="White" Click="btn_save_Click"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
